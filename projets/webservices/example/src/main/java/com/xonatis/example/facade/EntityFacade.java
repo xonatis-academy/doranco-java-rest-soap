@@ -2,6 +2,8 @@ package com.xonatis.example.facade;
 
 import com.xonatis.example.domain.Car;
 import com.xonatis.example.dto.CarRequest;
+import com.xonatis.example.main.Cached;
+import com.xonatis.example.main.Secured;
 import com.xonatis.example.service.EntityService;
 
 import jakarta.inject.Inject;
@@ -25,6 +27,8 @@ public class EntityFacade {
 		this.service = service;
 	}
 	
+	@Secured
+	@Cached
 	@GET
 	public Response list() {
 		return Response.ok(this.service.list()).build();

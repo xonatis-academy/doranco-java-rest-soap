@@ -33,6 +33,8 @@ public class ExampleApplication {
 			}
 			
 		});
+		rc.register(SecurityFilter.class);
+		rc.register(CacheFilter.class);
 		
 		HttpServer server = GrizzlyHttpServerFactory.createHttpServer(uri, rc);
 		try {
